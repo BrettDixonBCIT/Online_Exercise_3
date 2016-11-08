@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<!-- ACIT 1620, assignment #1 -->
+<!-- Brett Dixon A00997869 -->
+
+<html>
+    <head>
+        <title>Brett Dixon's Assignment 1</title>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>        
+    </head>
+    
+    <style>
+        body {
+            margin:0;
+        }
+        
+        #backboxtop {
+            width:100%;
+            height:40vh;
+            background-image:url(http://placekitten.com/1000/1000);
+            background-repeat:no-repeat;
+            background-position:center center;
+            background-size:cover;
+            border: 2px solid black;
+        }
+        
+        #tagtop {
+            position:relative;
+            width:33%;
+            height:30%;
+            left:33%;
+            top:35%;
+            background-color:green;
+        }
+        
+        #centeredtextbox {
+            position:relative;
+            top:40%;
+            text-align:center;
+            font-size: 1.5vw;
+        }
+      
+        .portfolio {
+            display:inline-block;
+            vertical-align: bottom;
+            position:relative;
+            width:auto;
+            height:auto;
+        }
+        
+        .portfolioimg {
+            height:20vh;
+        }
+        
+         .titleblock {
+            position:absolute;
+            right:0;
+            top:-7.5%;
+            width:auto;
+            height:10%; 
+            text-align:center;
+            font-size:0.75vw;
+            background-color:gainsboro;
+        }
+        
+        .profile {
+            position:relative;
+            left:45%;
+            bottom:-45%;
+            width:10vw;
+            height:auto;
+            font-size:1.25vw;
+        }
+        
+        .profileimg {
+            width:10vw;
+            height:auto;
+            border: 2px solid black;
+        }
+        
+        #nameblock {
+            width:100%;
+            height:100px;
+        }
+        
+        #portfolioblock {
+            width:100%;
+            height:25vh;
+            background-color:red;
+            position:relative;
+        }
+        
+        #portfoliobox {
+            position:absolute;
+            bottom:0;
+            margin:0.5vw;
+        }
+        
+        #bioblock {
+            width:100%;
+            height:auto;
+            background-color:palevioletred;
+            position:relative;
+        }
+        
+        .biopic {
+/*
+            margin:10px;
+            width:30vw;
+            height:auto;
+*/
+        }
+        
+        #biopara {
+/*
+            display:inline-block;
+            vertical-align: top;
+            width:50vw;
+            right:0;
+*/
+        }
+        
+        #tagbottom {
+            width:100%;
+            height:400px;
+            background-image:url(https://a2ua.com/sheltie/sheltie-009.jpg);
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size:cover
+        }
+        
+        #emptyblock {
+            width:100%;
+            height:200px;
+        }
+        
+        #centeredtextboxbig {
+            position:relative;
+            top:40%;
+            text-align:center;
+            font-size: 4vw;
+            color:azure;
+        }
+        
+        .plusbutton {
+            position:absolute;
+            bottom:0;
+            left:0.25vw;
+            width:1.25vw;
+            height:1.25vw;
+            font-size:0.75vw;
+            text-align:center;
+        }
+        
+        .minusbutton {
+            position:absolute;
+            bottom:0;
+            left:2vw;
+            width:1.25vw;
+            height:1.25vw;
+            font-size:0.75vw;
+            text-align:center;
+        }
+    </style>
+    
+    <body>
+        <div id='backboxtop'>
+            <div id='tagtop'>
+                <div id='centeredtextbox'>Professional TV watcher, causual engineer.</div>
+            </div>
+            <figure class='profile'>
+                <img class='profileimg' src='https://pbs.twimg.com/profile_images/378800000175918991/00656840594f3bc689c81392f77ba015.jpeg'>
+                <figcaption><center>Brett Dixon</center></figcaption>
+            </figure>
+        </div>
+        
+        <div id='emptyblock'></div>
+        
+        <div id='portfolioblock' class="container-fluid">
+            <div id='portfoliobox' class="container-fluid">
+                <div class='portfolio col-lg-3 col-md-3 col-sm-6 col-xs-6'>
+                    <img class='portfolioimg' src='http://www.emirates.com/au/english/images/SYD_A380_Double_Daily_Bottom_780_tcm276-1214232.jpg'>
+                    <div class='titleblock'>A380</div>
+                    <button id='plusbutton1' class='plusbutton'>+</button>
+                    <button id='minusbutton1' class='minusbutton'>-</button> 
+                </div>
+
+                <div class='portfolio col-lg-2 col-md-2 col-sm-6 col-xs-6'>
+                    <img class='portfolioimg' src='https://aviationdoctor.files.wordpress.com/2014/07/crj-200.jpg'>
+                    <div class='titleblock'>CRJ200</div>
+                    <button id='plusbutton2' class='plusbutton'>+</button>
+                    <button id='minusbutton2' class='minusbutton'>-</button>
+                </div>
+
+                <div class='portfolio col-lg-2 col-md-2 col-sm-6 col-xs-6'>
+                    <img class='portfolioimg' src='http://www.helicecluster.com/sites/helicecluster.com/files/styles/news-full/public/images/erj_145_baixa.jpg?itok=Qp5z3wVX'>
+                    <div class='titleblock'>ERJ145</div>
+                    <button id='plusbutton3' class='plusbutton'>+</button>
+                    <button id='minusbutton3' class='minusbutton'>-</button>
+                </div>
+
+                <div class='portfolio col-lg-2 col-md-2 col-sm-6 col-xs-6'>
+                    <img class='portfolioimg' src='http://wpmedia.montrealgazette.com/2016/04/a-bombardier-cseries-jet-in-delta-livery-the-airline-ordere.jpeg?quality=55&strip=all&w=840&h=630&crop=1'>
+                    <div class='titleblock'>Cseries</div>
+                    <button id='plusbutton4' class='plusbutton'>+</button>
+                    <button id='minusbutton4' class='minusbutton'>-</button>
+                </div>
+
+                <div class='portfolio col-lg-2 col-md-2 col-sm-6 col-xs-6'>
+                    <img class='portfolioimg' src='http://www.macleanengineering.com/images/support/sectors/ground_support/SS3_Shotcrete_Sprayer_main.jpg'>
+                    <div class='titleblock'>MacLean Engineering</div>
+                    <button id='plusbutton5' class='plusbutton'>+</button>
+                    <button id='minusbutton5' class='minusbutton'>-</button>
+                </div>
+                <div class='col-lg-2 col-md-2 col-sm-6 col-xs-6'></div>
+            </div>
+        </div>
+        
+        <div id='bioblock' class='container-fluid'>
+            <img class='biopic col-lg-3 col-md-3 col-sm-6 col-xs-6' src='https://pbs.twimg.com/profile_images/378800000175918991/00656840594f3bc689c81392f77ba015.jpeg'>
+            
+            <div id='biopara' class="col-lg-9 col-md-9 col-sm-6 col-xs-6">
+                <br>
+                <p>
+                    Hello, my name is Brett Dixon.  I am a former Aerospace Engineer looking for a change of career 
+                    to the IT sector.  I watch way too much TV, Twitch, and Youtube.  I love video games, especially
+                    Civ and Dota 2.  Above you can see pictures of the major engineering projects I worked on in the
+                    past.  I am cat person, but I love dogs too.  
+                </p>
+            </div>    
+        </div>
+        
+        <div id='tagbottom'>
+            <div id='centeredtextboxbig'>End of Brett</div>
+        </div>
+        
+        <script>
+            var imgSize = document.getElementsByClassName('portfolioimg');
+            var portBig1 = document.getElementById('plusbutton1');
+            var portSmall1 = document.getElementById('minusbutton1');
+            var portBig2 = document.getElementById('plusbutton2');
+            var portSmall2 = document.getElementById('minusbutton2');
+            var portBig3 = document.getElementById('plusbutton3');
+            var portSmall3 = document.getElementById('minusbutton3');
+            var portBig4 = document.getElementById('plusbutton4');
+            var portSmall4 = document.getElementById('minusbutton4');
+            var portBig5 = document.getElementById('plusbutton5');
+            var portSmall5 = document.getElementById('minusbutton5');
+            var portBlock = document.getElementById('portfolioblock');
+            
+            var screen = parseFloat(window.getComputedStyle(portBlock, null).getPropertyValue("width"));
+            
+            portBig1.onclick = function(){
+                var size = parseFloat(window.getComputedStyle(imgSize[0], null).getPropertyValue("width"));
+                var size = parseFloat(imgSize[0].style.width)
+                size = size / screen * 100;
+                size = size + 1;
+                imgSize[0].style.width = size + 'vw';
+                imgSize[0].style.height = 'auto';
+            }
+            
+            portSmall1.onclick = function(){
+                var size = parseFloat(window.getComputedStyle(imgSize[0], null).getPropertyValue("width"));
+                size = size / screen * 100;
+                size = size - 1;
+                imgSize[0].style.width = size + 'vw';
+                imgSize[0].style.height = 'auto';
+            } 
+            
+            portBig2.onclick = function(){
+                var size = parseFloat(window.getComputedStyle(imgSize[1], null).getPropertyValue("width"));
+                size = size / screen * 100;
+                size = size + 1;
+                imgSize[1].style.width = size + 'vw';
+                imgSize[1].style.height = 'auto';
+            }
+            
+            portSmall2.onclick = function(){
+                var size = parseFloat(window.getComputedStyle(imgSize[1], null).getPropertyValue("width"));
+                size = size / screen * 100;
+                size = size - 1;
+                imgSize[1].style.width = size + 'vw';
+                imgSize[1].style.height = 'auto';
+            }
+            
+            portBig3.onclick = function(){
+                var size = parseFloat(window.getComputedStyle(imgSize[2], null).getPropertyValue("width"));
+                size = size / screen * 100;
+                size = size + 1;
+                imgSize[2].style.width = size + 'vw';
+                imgSize[2].style.height = 'auto';
+            }
+            
+            portSmall3.onclick = function(){
+                var size = parseFloat(window.getComputedStyle(imgSize[2], null).getPropertyValue("width"));
+                size = size / screen * 100;
+                size = size - 1;
+                imgSize[2].style.width = size + 'vw';
+                imgSize[2].style.height = 'auto';
+            }
+            
+            portBig4.onclick = function(){
+                var size = parseFloat(window.getComputedStyle(imgSize[3], null).getPropertyValue("width"));
+                size = size / screen * 100;
+                size = size + 1;
+                imgSize[3].style.width = size + 'vw';
+                imgSize[3].style.height = 'auto';
+            }
+            
+            portSmall4.onclick = function(){
+                var size = parseFloat(window.getComputedStyle(imgSize[3], null).getPropertyValue("width"));
+                size = size / screen * 100;
+                size = size - 1;
+                imgSize[3].style.width = size + 'vw';
+                imgSize[3].style.height = 'auto';
+            }
+            
+            portBig5.onclick = function(){
+                var size = parseFloat(window.getComputedStyle(imgSize[4], null).getPropertyValue("width"));
+                size = size / screen * 100;
+                size = size + 1;
+                imgSize[4].style.width = size + 'vw';
+                imgSize[4].style.height = 'auto';
+            }
+            
+            portSmall5.onclick = function(){
+                var size = parseFloat(window.getComputedStyle(imgSize[4], null).getPropertyValue("width"));
+                size = size / screen * 100;
+                size = size - 1;
+                imgSize[4].style.width = size + 'vw';
+                imgSize[4].style.height = 'auto';
+            }
+        </script>
+    </body>
+</html>
